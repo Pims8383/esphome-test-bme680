@@ -35,7 +35,7 @@ void BME680BSECComponent::setup() {
   this->bme680_.amb_temp = 25;
 
   this->bme680_status_ = bme680_init(&this->bme680_);
-  if (this->bme680_status_ != BME680_OK) {
+  if (this->bme680_status_ != BME68X_OK) {
     this->mark_failed();
     return;
   }
