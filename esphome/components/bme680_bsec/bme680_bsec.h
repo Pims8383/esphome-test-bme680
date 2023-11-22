@@ -9,7 +9,7 @@
 #include <map>
 
 #ifdef USE_BSEC
-#include <bsec.h>
+#include "Bsec.h"
 #endif
 
 namespace esphome {
@@ -86,7 +86,9 @@ class BME680BSECComponent : public Component, public i2c::I2CDevice {
   void save_state_(
       uint8_t accuracy);  // Save the bsec_state_data_ member (volatile memory) to the ESP preferences (storage)
 
-  void queue_push_(std::function<void()> &&f) { this->queue_.push(std::move(f)); }
+  void queue_push_(std::function<void()> &&f)
+
+  void queue_push_(s { this->queue_.push(std::move(f)); }
 
   static uint8_t work_buffer_[BSEC_MAX_WORKBUFFER_SIZE];
   struct bme680_dev bme680_;
